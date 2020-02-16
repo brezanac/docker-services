@@ -15,6 +15,7 @@ For specific details on how to run and use each of the services please consult t
 ## List of available services ##
 
 * `traefik` - a small reverse HTTP proxy for routing requests to Docker containers ([link](https://containo.us/traefik/))
+* `portainer` - a web based tool for maintaining and managing Docker environments ([link](https://www.portainer.io/))
 
 ## License
 
