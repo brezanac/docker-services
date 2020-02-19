@@ -1,6 +1,6 @@
 # traefik
 
-A simple HTTP reverse proxy, based on [Traefik](https://traefik.io/).
+A lightweight HTTP reverse proxy, based on [Traefik](https://traefik.io/).
 
 ## Usage ##
 
@@ -9,13 +9,13 @@ Copy `.env.example` to `.env` and set a new value for `COMPOSE_PROJECT_NAME` if 
 Run `docker-compose`.
 
 ```
-docker-compose up --build
+docker-compose up
 ```
 
 Run `docker-compose` with the `-d` (detached) parameter if you want the service to run in the background.
 
 ```
-docker-compose up --build -d
+docker-compose up -d
 ```
 
 Usually you do not need more than one Traefik instance running on the same machine because Traefik ties directly into Docker to automatically handle all running containers.
@@ -24,7 +24,7 @@ Usually you do not need more than one Traefik instance running on the same machi
 
 In order for your other services to gain access to the generated public network, through which Traefik is listening for incoming requests, you need to configure them properly.
 
-First, add the following service level `networks` configuration to each of the services that will be using Traefik.
+First add the following service level `networks` configuration to each of the services that will be using Traefik.
 
 ```
 networks:
@@ -68,16 +68,14 @@ networks:
 
 ## Default container restart policy ##
 
-Please note that the `traefik` service has been configured with an `unless-stopped` restart policy which means that it will continue to run until manually stopped, even after the machine has been restarted.
+Please note that the `traefik` service has been configured with the `unless-stopped` restart policy which means that it will continue to run until manually stopped, even after the machine has been restarted.
 
-If you do not want the service to restart automatically you can disable that behavior by simply removing the `restart: unless-stopped` line from `docker-compose.yml`.
+If you do not want the service to restart automatically you can disable that behavior by simply removing the `restart: unless-stopped` line from `docker-compose.yml` or by choosing a different restart policy from the list which you can find [here](https://docs.docker.com/compose/compose-file/#restart).
 
-For more details please see the following [link](https://docs.docker.com/compose/compose-file/#restart).
-
-## Requirements
+## Requirements ##
 
 Docker 17.12.0 or newer.
 
-## License
+## License ##
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
