@@ -1,8 +1,8 @@
-# portainer #
+# portainer
 
 [Portainer](https://www.portainer.io/) is a web based tool for maintaining and managing Docker environments.
 
-## Usage ##
+## Usage
 
 Copy `.env.example` to `.env` and set a new value for `COMPOSE_PROJECT_NAME` if needed.
 
@@ -20,16 +20,16 @@ docker-compose up
 
 **NOTE:** you only need one running Portainer instance per machine since it ties directly into Docker, which allows to control all the images, containers etc. from one instance. 
 
-## Default container restart policy ##
+## Default container restart policy
 
 Please note that the `portainer` service has been configured with an `unless-stopped` restart policy which means that it will continue to run until manually stopped, even after the machine has been restarted.
 
 If you do not want the service to restart automatically you can disable that behavior by simply removing the `restart: unless-stopped` line from `docker-compose.yml` or by choosing a different restart policy from the list which you can find [here](https://docs.docker.com/compose/compose-file/#restart).
 
-## Requirements ##
+## Requirements
 
 Docker 17.04.0 or newer.
 
-## License ##
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
