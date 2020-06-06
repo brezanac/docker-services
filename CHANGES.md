@@ -20,3 +20,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - renamed LICENSE.md to LICENSE
+
+## [1.1.0] - 2020-06-06
+
+### Changed
+
+- added the option to configure both main ports in .env.
